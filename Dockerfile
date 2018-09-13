@@ -23,6 +23,10 @@ WORKDIR /app
 
 VOLUME /app/Uploads
 
+#时区修改
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN echo 'Asia/Shanghai' >/etc/timezone
+
 # php-fpm使用以下配置
 ##EXPOSE 9000
 #RUN bash /opt/docker/bin/php-fpm.sh
